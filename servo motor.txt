@@ -1,0 +1,27 @@
+#include <Servo.h>
+
+int pos =0;
+Servo servom;
+
+void setup()
+{
+ servom.attach(7);
+   
+}
+
+void loop()
+{
+  for (pos=0;pos<=180; pos++)
+  {
+   servom.write(pos);
+   delay(20); // affects rotation speed
+  }
+  delay(1000); 
+    
+  for (pos=180;pos>=0; pos--)
+  {
+   servom.write(pos);
+   delay(20);
+  }
+  delay(1000);
+}
